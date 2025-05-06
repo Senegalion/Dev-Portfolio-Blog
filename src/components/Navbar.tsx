@@ -26,6 +26,7 @@ function Navbar() {
           >
             Blog
           </Link>
+          <Link to="/about">About Me</Link>
         </div>
       </nav>
     </header>
