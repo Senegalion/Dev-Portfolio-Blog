@@ -19,8 +19,8 @@ const posts = [
 
 function Blog() {
   return (
-    <section className="min-h-screen bg-gradient-to-r from-indigo-50 via-purple-100 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 py-20">
-      <div className="max-w-6xl mx-auto space-y-10">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 via-purple-100 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 px-4">
+      <div className="w-full max-w-6xl space-y-10">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ function Blog() {
           Blog Posts
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <motion.div
               key={post.slug}

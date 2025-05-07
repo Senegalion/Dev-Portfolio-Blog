@@ -31,7 +31,7 @@ function Post() {
   if (error) return <div className="text-center text-red-600">{error}</div>;
 
   return (
-    <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-10 min-h-screen flex items-center justify-center">
+    <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-10 min-h-screen flex items-center justify-center -translate-x-10">
       <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 shadow-2xl rounded-3xl p-12 transform transition-all hover:scale-105 hover:shadow-2xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
