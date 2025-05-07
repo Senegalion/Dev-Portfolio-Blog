@@ -1,0 +1,37 @@
+# --- FRONTEND IGNORE (dev-portfolio-blog) ---
+
+/dev-portfolio-blog/node_modules
+/dev-portfolio-blog/dist
+/dev-portfolio-blog/dist-ssr
+/dev-portfolio-blog/*.local
+/dev-portfolio-blog/npm-debug.log*
+/dev-portfolio-blog/yarn-debug.log*
+/dev-portfolio-blog/yarn-error.log*
+/dev-portfolio-blog/pnpm-debug.log*
+/dev-portfolio-blog/lerna-debug.log*
+/dev-portfolio-blog/logs
+/dev-portfolio-blog/*.log
+
+# --- BACKEND IGNORE (backend) ---
+
+/backend/target
+/backend/logs
+/backend/*.log
+/backend/.idea
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
