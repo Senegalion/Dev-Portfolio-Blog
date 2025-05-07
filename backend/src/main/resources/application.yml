@@ -1,3 +1,20 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: backend
+  datasource:
+    url: jdbc:postgresql://localhost:5433/portfolio
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  jpa:
+    open-in-view:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
