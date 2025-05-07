@@ -1,12 +1,44 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaLinkedin, FaInstagram, FaDownload } from "react-icons/fa";
 
 function Home() {
   return (
     <main className="relative overflow-hidden min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_30%,rgba(99,102,241,0.4),transparent_40%)] pointer-events-none" />
 
-      <section className="max-w-4xl mx-auto px-6 py-32 text-center relative z-10">
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="absolute top-10 right-10 z-30 flex gap-4"
+      >
+        <a
+          href="https://www.linkedin.com/in/łukasz-pelikan/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 text-2xl"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://www.instagram.com/senegal_ek/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-pink-600 hover:text-pink-800 dark:text-pink-400 text-2xl"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="/cv/LukaszPelikan_CV.pdf"
+          download
+          className="text-green-600 hover:text-green-800 dark:text-green-400 text-2xl"
+        >
+          <FaDownload />
+        </a>
+      </motion.div>
+
+      <section className="max-w-5xl mx-auto px-6 py-32 text-center relative z-10 backdrop-blur-md rounded-xl bg-white/30 dark:bg-gray-900/30 shadow-xl">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +73,7 @@ function Home() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="mt-10 flex justify-center gap-4"
+          className="mt-10 flex justify-center gap-4 flex-wrap"
         >
           <Link
             to="/portfolio"
@@ -56,6 +88,14 @@ function Home() {
           >
             Read Blog
           </Link>
+          <a
+            href="/cv/LukaszPelikan_CV.pdf"
+            download
+            className="px-6 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition shadow-lg"
+            style={{ color: "white" }}
+          >
+            Download CV
+          </a>
         </motion.div>
       </section>
     </main>

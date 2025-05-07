@@ -49,10 +49,10 @@ const travelData = [
 const galleryImages = [
   "/images/image1.jpg",
   "/images/image2.jpg",
-  "/images/image3.jpg" /*,
+  "/images/image3.jpg",
   "/images/image4.jpg",
   "/images/image5.jpg",
-  "/images/image6.jpg",*/,
+  "/images/image6.jpg",
 ];
 
 function About() {
@@ -61,7 +61,6 @@ function About() {
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 py-20 px-6">
-      {/* Intro Section */}
       <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -100,7 +99,75 @@ function About() {
         </motion.div>
       </section>
 
-      {/* Hobbies Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mt-24 max-w-6xl mx-auto text-center"
+      >
+        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+          My Education
+        </h3>
+        <div className="grid md:grid-cols-2 gap-10 px-6">
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md"
+          >
+            <h4 className="text-xl font-semibold text-indigo-600">
+              Politechnika Łódzka
+            </h4>
+            <p className="text-gray-800 dark:text-gray-300">
+              Bachelor's degree, Computer Science
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Oct 2022 – Feb 2026 (3rd year student)
+            </p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md"
+          >
+            <h4 className="text-xl font-semibold text-indigo-600">
+              Metropolia University of Applied Sciences
+            </h4>
+            <p className="text-gray-800 dark:text-gray-300">
+              Bachelor's degree, Information Technology
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Jan 2025 – May 2025 (Erasmus Exchange)
+            </p>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mt-24 max-w-6xl mx-auto text-center"
+      >
+        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+          Languages I Speak
+        </h3>
+        <div className="flex flex-wrap justify-center gap-4">
+          {[
+            { name: "Polish (Native)", color: "bg-green-200" },
+            { name: "English (C1)", color: "bg-blue-200" },
+            { name: "Spanish (A2)", color: "bg-yellow-200" },
+            { name: "French (A2)", color: "bg-pink-200" },
+            { name: "Finnish (A2)", color: "bg-purple-200" },
+          ].map((lang) => (
+            <span
+              key={lang.name}
+              className={`px-4 py-2 rounded-full shadow ${lang.color} text-gray-800 font-medium`}
+            >
+              {lang.name}
+            </span>
+          ))}
+        </div>
+      </motion.section>
+
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -132,7 +199,6 @@ function About() {
         </div>
       </motion.section>
 
-      {/* World Map Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -147,7 +213,6 @@ function About() {
         </div>
       </motion.section>
 
-      {/* Gallery Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -197,7 +262,6 @@ function About() {
         )}
       </motion.section>
 
-      {/* Tech Stack Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
