@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main className="min-h-screen pt-16 pb-12 px-4">
+      <main className="min-h-screen pt-24 pb-12 px-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
