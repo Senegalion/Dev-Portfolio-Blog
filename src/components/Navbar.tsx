@@ -1,40 +1,73 @@
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="fixed top-0 left-0 right-0 w-full bg-white dark:bg-gray-800 shadow z-50">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
           My Portfolio
         </h1>
-        <div className="flex gap-8 text-gray-700 dark:text-gray-200 text-lg">
-          <Link
-            to="/"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-200 text-lg">
+          <Link className="hover:text-blue-500" to="/">
+            Home
+          </Link>
+          <Link className="hover:text-blue-500" to="/portfolio">
+            Portfolio
+          </Link>
+          <Link className="hover:text-blue-500" to="/blog">
+            Blog
+          </Link>
+          <Link className="hover:text-blue-500" to="/certifications">
+            Certifications
+          </Link>
+          <Link className="hover:text-blue-500" to="/about">
+            About Me
+          </Link>
+        </div>
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-700 dark:text-white text-2xl"
+        >
+          {isOpen ? <HiX /> : <HiMenu />}
+        </button>
+      </nav>
+
+      {/* Mobile nav */}
+      {isOpen && (
+        <div className="md:hidden px-6 pb-4 space-y-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-lg">
+          <Link to="/" onClick={() => setIsOpen(false)} className="block">
             Home
           </Link>
           <Link
             to="/portfolio"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            onClick={() => setIsOpen(false)}
+            className="block"
           >
             Portfolio
           </Link>
-          <Link
-            to="/blog"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
+          <Link to="/blog" onClick={() => setIsOpen(false)} className="block">
             Blog
           </Link>
           <Link
             to="/certifications"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            onClick={() => setIsOpen(false)}
+            className="block"
           >
             Certifications
           </Link>
-          <Link to="/about">About Me</Link>
+          <Link to="/about" onClick={() => setIsOpen(false)} className="block">
+            About Me
+          </Link>
         </div>
-      </nav>
+      )}
     </header>
   );
 }

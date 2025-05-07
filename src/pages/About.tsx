@@ -60,7 +60,7 @@ function About() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900 py-20 px-6">
+    <main className="w-full min-h-screen bg-white dark:bg-gray-900 pt-24 mx-auto overflow-x-hidden max-w-[100vw]">
       <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -208,7 +208,7 @@ function About() {
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
           Places I've Visited
         </h3>
-        <div className="flex justify-center">
+        <div className="w-full max-w-full overflow-hidden">
           <WorldMap color="indigo" size="responsive" data={travelData} />
         </div>
       </motion.section>
@@ -222,7 +222,7 @@ function About() {
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
           Photo Gallery
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-2 md:px-4">
           {galleryImages.map((img, i) => (
             <div
               key={i}
