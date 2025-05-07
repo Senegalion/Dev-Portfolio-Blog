@@ -242,22 +242,14 @@ function About() {
         </div>
         {isOpen && (
           <Lightbox
-            mainSrc={galleryImages[photoIndex]}
-            nextSrc={galleryImages[(photoIndex + 1) % galleryImages.length]}
-            prevSrc={
-              galleryImages[
-                (photoIndex + galleryImages.length - 1) % galleryImages.length
-              ]
-            }
-            onCloseRequest={() => setIsOpen(false)}
-            onMovePrevRequest={() =>
-              setPhotoIndex(
-                (photoIndex + galleryImages.length - 1) % galleryImages.length
-              )
-            }
-            onMoveNextRequest={() =>
-              setPhotoIndex((photoIndex + 1) % galleryImages.length)
-            }
+            slides={galleryImages.map((src) => ({ src }))}
+            open={isOpen}
+            index={photoIndex}
+            close={() => setIsOpen(false)}
+            on={{
+              click: () =>
+                setPhotoIndex((photoIndex + 1) % galleryImages.length),
+            }}
           />
         )}
       </motion.section>
