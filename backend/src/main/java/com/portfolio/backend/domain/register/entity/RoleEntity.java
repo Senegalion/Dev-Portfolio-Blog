@@ -22,7 +22,7 @@ public class RoleEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "name", unique = true, nullable = false)
-    private RoleName name;
+    private RoleName roleName;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roleEntities")
     private Set<UserEntity> userEntities;
