@@ -26,6 +26,12 @@ function Navbar() {
           >
             Blog
           </Link>
+          <Link
+            to="/certifications"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Certifications
+          </Link>
           <Link to="/about">About Me</Link>
         </div>
       </nav>
