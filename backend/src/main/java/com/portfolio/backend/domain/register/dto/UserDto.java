@@ -1,6 +1,7 @@
 package com.portfolio.backend.domain.register.dto;
 
-import com.portfolio.backend.domain.register.entity.RoleName;
+
+import com.portfolio.backend.domain.register.RoleName;
 
 import java.util.Set;
 
