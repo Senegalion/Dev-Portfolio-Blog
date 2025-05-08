@@ -3,10 +3,12 @@ package com.portfolio.backend.infrastructure.clock;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.Clock;
+
 @Configuration
-public class Clock {
+public class ClockConfig {
     @Bean
-    java.time.Clock clock() {
-        return java.time.Clock.systemUTC();
+    Clock clock() {
+        return Clock.systemUTC();
     }
 }

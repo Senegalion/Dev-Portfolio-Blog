@@ -1,9 +1,8 @@
-server:
-  port: 8080
-
 spring:
   application:
     name: backend
+  profiles:
+    active: dev
   datasource:
     url: jdbc:postgresql://localhost:5433/portfolio
     username: postgres
