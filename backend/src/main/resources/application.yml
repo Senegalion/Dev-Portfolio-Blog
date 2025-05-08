@@ -18,3 +18,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+auth:
+  jwt:
+    secretKey: ${JWT_SECRET:defaultSecretKey}
+    expirationDays: ${JWT_EXPIRATION_DAYS:30}
+    issuer: portfolio-backend
