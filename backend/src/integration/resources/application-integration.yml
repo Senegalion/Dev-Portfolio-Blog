@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:15:///integration-db
+    username: postgres
+    password: postgres
+  flyway:
+    enabled: false

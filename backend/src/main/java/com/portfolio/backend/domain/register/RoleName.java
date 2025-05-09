@@ -1,4 +1,4 @@
-package com.portfolio.backend.domain.register.entity;
+package com.portfolio.backend.domain.register;
 
 public enum RoleName {
     ROLE_USER,

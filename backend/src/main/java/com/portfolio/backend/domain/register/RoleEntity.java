@@ -1,4 +1,4 @@
-package com.portfolio.backend.domain.register.entity;
+package com.portfolio.backend.domain.register;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
