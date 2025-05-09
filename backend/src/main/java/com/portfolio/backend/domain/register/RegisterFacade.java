@@ -25,6 +25,7 @@ public class RegisterFacade {
         this.userMapper = userMapper;
     }
 
+    @Transactional
     public UserDto findByUsername(String username) {
         UserEntity userEntity = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
