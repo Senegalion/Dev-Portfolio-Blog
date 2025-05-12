@@ -2,8 +2,10 @@ package com.portfolio.backend.domain.blog;
 
 import com.portfolio.backend.domain.blog.dto.PostDetailsDto;
 import com.portfolio.backend.domain.blog.dto.PostDto;
+import com.portfolio.backend.shared.exception.PostNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,9 +25,10 @@ public class BlogFacade {
         return postMapper.toDtoList(posts);
     }
 
+    @Transactional
     public PostDetailsDto getPostBySlug(String slug) {
         PostEntity post = postRepository.findBySlug(slug)
-                .orElseThrow(() -> new IllegalArgumentException("Post not found: " + slug));
+                .orElseThrow(() -> new PostNotFoundException("Post not found: " + slug));
         return postMapper.toDetailsDto(post);
     }
 }
