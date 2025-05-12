@@ -92,6 +92,7 @@ The project is fully integrated with a **Spring Boot** backend, which is built w
    ./mvnw spring-boot:run
 
 6. The backend will be available at http://localhost:8080.
+7. Swagger UI available at: http://localhost:8080/swagger-ui/index.html
 
 ## Live Demo
 You can check the live version of the project at [lukaszpelikan.com](https://www.lukaszpelikan.com)
