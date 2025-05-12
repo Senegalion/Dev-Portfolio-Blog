@@ -1,5 +1,6 @@
 package com.portfolio.backend.domain.register;
 
+import com.portfolio.backend.domain.blog.CommentEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,6 +45,15 @@ public class UserEntity implements UserDetails {
             inverseJoinColumns = {@JoinColumn(name = "role_id")}
     )
     private Set<RoleEntity> roleEntities = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
+    private Set<CommentEntity> comments = new HashSet<>();
+
+    public UserEntity(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
