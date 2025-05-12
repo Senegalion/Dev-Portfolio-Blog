@@ -1,5 +1,6 @@
 package com.portfolio.backend.domain.blog;
 
+import com.portfolio.backend.domain.blog.dto.PostDetailsDto;
 import com.portfolio.backend.domain.blog.dto.PostDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +21,11 @@ public class BlogFacade {
     public List<PostDto> getAllPosts() {
         List<PostEntity> posts = postRepository.findAll();
         return postMapper.toDtoList(posts);
+    }
+
+    public PostDetailsDto getPostBySlug(String slug) {
+        PostEntity post = postRepository.findBySlug(slug)
+                .orElseThrow(() -> new IllegalArgumentException("Post not found: " + slug));
+        return postMapper.toDetailsDto(post);
     }
 }
