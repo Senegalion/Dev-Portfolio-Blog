@@ -8,10 +8,34 @@ const certifications = [
     image: "/images/certifications/jjr.png",
   },
   {
+    title: "Master Microservices with Spring Boot and Spring Cloud",
+    issuer: "Udemy",
+    link: "https://www.udemy.com/certificate/UC-29716e8c-e54c-4abb-9fdf-673f9f4abb89/",
+    image: "/images/certifications/microservices.jpg",
+  },
+  {
+    title: "Master Spring Boot 3 & Spring Framework 6 with Java",
+    issuer: "Udemy",
+    link: "https://www.udemy.com/certificate/UC-f419a2da-dfe4-4f81-a414-9217b99fbb24/",
+    image: "/images/certifications/springboot.jpg",
+  },
+  {
+    title: "Docker & Kubernetes: The Practical Guide [2025 Edition]",
+    issuer: "Udemy",
+    link: "https://www.udemy.com/certificate/UC-df84dfa4-6fc9-45f0-a320-f55677693919/",
+    image: "/images/certifications/docker_kubernetes.jpg",
+  },
+  {
     title: "Zajavka – Java Developer (22 Workshops)",
     issuer: "Udemy",
     link: "https://www.udemy.com/certificate/UC-40118310-bd46-47d1-9db1-b30e560c775c/",
     image: "/images/certifications/zajavka.jpg",
+  },
+  {
+    title: "Java Virtual Threads & Concurrency Masterclass [Hands-On]",
+    issuer: "Udemy",
+    link: "https://www.udemy.com/certificate/UC-a9e70f86-6f02-4db6-8da9-e2db7df5d170/",
+    image: "/images/certifications/threads.jpg",
   },
   {
     title: "Responsive Web Design",
