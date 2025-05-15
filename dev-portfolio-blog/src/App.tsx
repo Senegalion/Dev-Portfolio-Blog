@@ -11,6 +11,7 @@ import Certifications from "./pages/Certifications";
 import { AuthProvider } from "./context/AuthContext";
 import LoginForm from "./pages/LoginForm";
 import RegisterForm from "./pages/RegisterForm";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
         <Footer />

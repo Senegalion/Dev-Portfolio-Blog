@@ -95,14 +95,17 @@ function Navbar() {
 
           {/* Mobile user section */}
           {user ? (
-            <div className="flex items-center space-x-3 mt-4">
+            <div className="flex items-center space-x-3">
               <FaUserCircle className="text-indigo-600 dark:text-white text-2xl" />
-              <span className="text-gray-900 dark:text-gray-100">{user}</span>
+              <Link
+                to="/profile"
+                className="text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 font-semibold transition"
+                title="Go to profile"
+              >
+                {user}
+              </Link>
               <button
-                onClick={() => {
-                  logout();
-                  setIsOpen(false);
-                }}
+                onClick={logout}
                 className="text-red-500 hover:underline ml-2"
                 aria-label="Logout"
               >
@@ -112,8 +115,7 @@ function Navbar() {
           ) : (
             <Link
               to="/login"
-              onClick={() => setIsOpen(false)}
-              className="block mt-4 border border-blue-500 rounded px-3 py-1 text-center hover:bg-blue-50 dark:hover:bg-gray-700"
+              className="hover:text-blue-500 border border-blue-500 rounded px-3 py-1"
             >
               Login
             </Link>

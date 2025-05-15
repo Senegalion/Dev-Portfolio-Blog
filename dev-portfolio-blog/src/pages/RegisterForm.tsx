@@ -52,7 +52,7 @@ function RegisterForm() {
       />
       <button
         type="submit"
-        className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700"
+        className="w-full bg-indigo-600 text-indigo-600 py-2 rounded hover:bg-indigo-700 transition"
       >
         Register
       </button>
