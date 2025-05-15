@@ -8,23 +8,30 @@ import Blog from "./pages/Blog";
 import Post from "./pages/Post";
 import About from "./pages/About";
 import Certifications from "./pages/Certifications";
+import { AuthProvider } from "./context/AuthContext";
+import LoginForm from "./pages/LoginForm";
+import RegisterForm from "./pages/RegisterForm";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <main className="min-h-screen pt-24 pb-12 px-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<Post />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/certifications" element={<Certifications />} />
-        </Routes>
-      </main>
-      <Footer />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <main className="min-h-screen pt-24 pb-12 px-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Post />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/register" element={<RegisterForm />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
