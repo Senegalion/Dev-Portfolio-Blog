@@ -3,6 +3,43 @@ import ProjectCard from "../components/ProjectCard";
 
 const projects = [
   {
+    title: "Akigator App",
+    description:
+      "An intelligent guessing game inspired by Akinator, where the computer asks questions to guess what you're thinking. Built using Spring Boot for the backend and React with Tailwind CSS for the frontend, it leverages machine learning principles to refine its guesses over time. Hosted and deployed on AWS infrastructure for scalability and reliability.",
+    tech: [
+      "Java 17",
+      "Spring Boot",
+      "PostgreSQL",
+      "Hibernate",
+      "Flyway",
+      "Docker & Docker-Compose",
+      "Wiremock",
+      "Log4j2",
+      "Testcontainers",
+      "RestTemplate",
+      "JSON",
+      "HTTP",
+      "MockMvc",
+      "Awaitility",
+      "JUnit5",
+      "Mockito",
+      "AssertJ",
+      "SpringBootTest",
+      "SpringSecurityTest",
+      "Lombok",
+      "Maven",
+      "Git",
+      "GitHub",
+      "IntelliJ Ultimate",
+      "Swagger",
+      "AWS (EC2, ECR, IAM, Security Groups)",
+      "React (frontend)",
+      "SCRUM",
+      "Pair Programming",
+    ],
+    link: "https://github.com/Senegalion/AkigatorApp",
+  },
+  {
     title: "Job Offers",
     description:
       "A Spring Boot web application that collects and processes job offers for Junior Java Developers from multiple external sources. It features REST APIs, MongoDB, Redis, Docker, and a full testing setup with JUnit, Mockito, and Testcontainers.",
