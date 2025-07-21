@@ -88,7 +88,7 @@ function About() {
 
   return (
     <main className="w-full min-h-screen bg-white dark:bg-gray-900 pt-24 mx-auto overflow-x-hidden max-w-[100vw]">
-      <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center p-4 md:p-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}

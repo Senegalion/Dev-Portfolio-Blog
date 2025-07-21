@@ -1,12 +1,9 @@
 import { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logout } = useAuth();
 
   return (
     <header className="fixed top-0 left-0 right-0 w-full bg-white dark:bg-gray-800 shadow z-50">
@@ -92,33 +89,6 @@ function Navbar() {
           <Link to="/about" onClick={() => setIsOpen(false)} className="block">
             About Me
           </Link>
-          Mobile user section
-          {user ? (
-            <div className="flex items-center space-x-3">
-              <FaUserCircle className="text-indigo-600 dark:text-white text-2xl" />
-              <Link
-                to="/profile"
-                className="text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 font-semibold transition"
-                title="Go to profile"
-              >
-                {user}
-              </Link>
-              <button
-                onClick={logout}
-                className="text-red-500 hover:underline ml-2"
-                aria-label="Logout"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              className="hover:text-blue-500 border border-blue-500 rounded px-3 py-1"
-            >
-              Login
-            </Link>
-          )}
         </div>
       )}
     </header>
