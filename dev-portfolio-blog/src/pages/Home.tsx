@@ -38,7 +38,7 @@ function Home() {
         </a>
       </motion.div>
 
-      <section className="max-w-5xl mx-auto px-6 py-32 text-center relative z-10 backdrop-blur-md rounded-xl bg-white/30 dark:bg-gray-900/30 shadow-xl">
+      <section className="max-w-3xl mx-auto px-6 py-32 text-center relative z-10 backdrop-blur-md rounded-xl bg-white/30 dark:bg-gray-900/30 shadow-xl">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,8 @@ function Home() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="mt-6 text-lg md:text-xl text-gray-700 dark:text-gray-300"
         >
-          Junior Java Developer passionate about building clean, scalable apps.
+          Junior Java Developer passionate about building scalable applications
+          using microservices architecture.
         </motion.p>
 
         <motion.p
@@ -65,8 +66,7 @@ function Home() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-4 text-base text-gray-600 dark:text-gray-400"
         >
-          Welcome to my portfolio and blog. Let’s build something great
-          together!
+          Welcome to my portfolio. Let’s build something great together!
         </motion.p>
 
         <motion.div
@@ -82,12 +82,12 @@ function Home() {
           >
             View Portfolio
           </Link>
-          <Link
+          {/* <Link
             to="/blog"
             className="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-xl hover:bg-indigo-50 dark:hover:bg-gray-700 transition"
           >
             Read Blog
-          </Link>
+          </Link> */}
           <a
             href="/cv/LukaszPelikan_CV.pdf"
             download

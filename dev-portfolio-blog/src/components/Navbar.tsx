@@ -23,9 +23,9 @@ function Navbar() {
           <Link className="hover:text-blue-500" to="/portfolio">
             Portfolio
           </Link>
-          <Link className="hover:text-blue-500" to="/blog">
+          {/* <Link className="hover:text-blue-500" to="/blog">
             Blog
-          </Link>
+          </Link> */}
           <Link className="hover:text-blue-500" to="/certifications">
             Certifications
           </Link>
@@ -33,7 +33,7 @@ function Navbar() {
             About Me
           </Link>
 
-          {/* User section */}
+          {/* User section
           {user ? (
             <div className="flex items-center space-x-3">
               <FaUserCircle className="text-indigo-600 dark:text-white text-2xl" />
@@ -53,7 +53,7 @@ function Navbar() {
             >
               Login
             </Link>
-          )}
+          )} */}
         </div>
 
         {/* Mobile menu button */}
@@ -79,9 +79,9 @@ function Navbar() {
           >
             Portfolio
           </Link>
-          <Link to="/blog" onClick={() => setIsOpen(false)} className="block">
+          {/* <Link to="/blog" onClick={() => setIsOpen(false)} className="block">
             Blog
-          </Link>
+          </Link> */}
           <Link
             to="/certifications"
             onClick={() => setIsOpen(false)}
@@ -92,8 +92,7 @@ function Navbar() {
           <Link to="/about" onClick={() => setIsOpen(false)} className="block">
             About Me
           </Link>
-
-          {/* Mobile user section */}
+          Mobile user section
           {user ? (
             <div className="flex items-center space-x-3">
               <FaUserCircle className="text-indigo-600 dark:text-white text-2xl" />

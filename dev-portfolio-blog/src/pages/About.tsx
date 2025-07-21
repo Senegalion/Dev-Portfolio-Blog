@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
 import WorldMap from "react-svg-worldmap";
 import Lightbox from "yet-another-react-lightbox";
@@ -110,8 +111,19 @@ function About() {
           <h2 className="text-4xl font-bold">About Me</h2>
           <p className="text-justify">
             Hi! I'm Łukasz – a passionate Java developer who loves writing
-            clean, maintainable code. I specialize in Java and Spring Boot but
-            I'm not afraid to dive into the frontend (as you can see 😉).
+            clean, maintainable code. I specialize in{" "}
+            <strong>
+              <em>Java</em>
+            </strong>
+            ,{" "}
+            <strong>
+              <em>Spring Boot</em>
+            </strong>{" "}
+            and{" "}
+            <strong>
+              <em>Spring Cloud</em>
+            </strong>{" "}
+            but I'm not afraid to dive into the frontend (as you can see 😉).
           </p>
           <p className="text-justify">
             I enjoy building apps that not only work great but also look great.
@@ -129,26 +141,33 @@ function About() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="mt-24 max-w-6xl mx-auto text-center"
+        className="mt-24 max-w-6xl mx-auto px-4"
       >
-        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">
           My Experience
         </h3>
-        <div className="space-y-10 px-4">
+        <div className="space-y-12">
           {experienceData.map((exp, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-left"
+              whileHover={{ scale: 1.03 }}
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-left border-l-4 border-indigo-500"
             >
-              <h4 className="text-xl font-semibold text-indigo-600">
-                {exp.title}
-              </h4>
-              <p className="text-gray-800 dark:text-gray-300">{exp.company}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                {exp.date}
-              </p>
-              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                <div>
+                  <h4 className="text-2xl font-semibold text-indigo-600">
+                    {exp.title}
+                  </h4>
+                  <p className="text-lg font-medium text-gray-800 dark:text-gray-300">
+                    {exp.company}
+                  </p>
+                </div>
+                <div className="flex items-center text-gray-600 dark:text-gray-400 mt-3 md:mt-0">
+                  <CalendarIcon className="w-5 h-5 mr-2" />
+                  <span className="text-sm">{exp.date}</span>
+                </div>
+              </div>
+              <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
                 {exp.description.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
@@ -179,7 +198,7 @@ function About() {
               Bachelor's degree, Computer Science
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Oct 2022 – Feb 2026 (3rd year student)
+              Oct 2022 – Feb 2026 (4th year student)
             </p>
           </motion.div>
 
@@ -213,9 +232,10 @@ function About() {
           {[
             { name: "Polish (Native)", color: "bg-green-200" },
             { name: "English (C1)", color: "bg-blue-200" },
-            { name: "Spanish (A2)", color: "bg-yellow-200" },
-            { name: "French (A2)", color: "bg-pink-200" },
+            { name: "Spanish (A2 / B1)", color: "bg-yellow-200" },
+            { name: "French (A2 / B1)", color: "bg-pink-200" },
             { name: "Finnish (A2)", color: "bg-purple-200" },
+            { name: "Japanese (A1)", color: "bg-red-200" },
           ].map((lang) => (
             <span
               key={lang.name}
@@ -267,9 +287,19 @@ function About() {
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
           Places I've Visited
         </h3>
-        <div className="flex justify-center w-full">
-          <div className="w-full max-w-4xl">
-            <WorldMap color="indigo" size="responsive" data={travelData} />
+        <div className="flex justify-center w-full px-4">
+          <div className="max-w-4xl w-full">
+            <div className="relative overflow-visible pt-12">
+              <div className="scale-125 transform origin-center">
+                <WorldMap color="indigo" size="responsive" data={travelData} />
+              </div>
+              <style>{`
+          svg {
+            display: block;
+            margin: 0 auto;
+          }
+        `}</style>
+            </div>
           </div>
         </div>
       </motion.section>
@@ -319,43 +349,194 @@ function About() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="mt-24 text-center"
+        className="mt-24 text-center max-w-5xl mx-auto px-4"
       >
-        <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
+        <h3 className="text-2xl font-semibold mb-8 text-gray-800 dark:text-gray-100">
           My Tech Stack
         </h3>
-        <div className="flex flex-wrap justify-center gap-4 text-sm">
-          {[
-            "Java",
-            "Spring / Spring Boot",
-            "REST API",
-            "Swagger UI",
-            "PostgreSQL",
-            "MySQL",
-            "Hibernate",
-            "Flyway",
-            "MongoDB & Mongo Express",
-            "Redis (Jedis) & Redis Commander",
-            "Unit Testing & Integration Testing",
-            "Maven",
-            "Gradle",
-            "Thymeleaf",
-            "Git / GitHub",
-            "Docker",
-            "AWS",
-            "HTML & CSS",
-            "JavaScript",
-            "TypeScript",
-            "React",
-            "TailwindCSS",
-          ].map((tech) => (
-            <span
-              key={tech}
-              className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
-            >
-              {tech}
-            </span>
-          ))}
+
+        {/* Backend */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            Backend
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {[
+              "Java 17+",
+              "Spring / Spring Boot",
+              "Spring Cloud",
+              "REST API",
+              "Swagger UI",
+              "Hibernate",
+              "Flyway",
+              "Apache Kafka",
+              "RabbitMQ",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Databases */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            Databases
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {[
+              "PostgreSQL",
+              "MySQL",
+              "MongoDB",
+              "Redis",
+              "Mongo Express",
+              "Redis Commander",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Testing */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            Testing
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {["JUnit", "Mockito", "Testcontainers", "MockMvc", "JMeter"].map(
+              (tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+                >
+                  {tech}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+
+        {/* DevOps & CI/CD */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            DevOps & CI/CD
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {["Docker", "Jenkins", "SonarQube", "SonarScanner", "Scrum"].map(
+              (tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+                >
+                  {tech}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+
+        {/* Cloud */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            Cloud
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {["AWS"].map(() => (
+              <span
+                key="AWS"
+                className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+              >
+                AWS
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Frontend */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            Frontend
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "Tailwind CSS",
+              "Bootstrap",
+              "Vite",
+              "Ext JS (basics)",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Version Control */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            Version Control
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {["Git", "GitHub", "Mercurial", "Phabricator"].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* IDE & Tools */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            IDE & Tools
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {["IntelliJ IDEA", "Visual Studio Code"].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Operating Systems */}
+        <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
+            Operating Systems
+          </h4>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {["Windows", "Linux"].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-white rounded-full font-medium shadow"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </motion.section>
     </main>

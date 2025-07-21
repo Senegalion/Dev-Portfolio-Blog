@@ -13,6 +13,24 @@ const certifications = [
     link: "https://www.udemy.com/certificate/UC-29716e8c-e54c-4abb-9fdf-673f9f4abb89/",
     image: "/images/certifications/microservices.jpg",
   },
+  // {
+  //   title: "Java Backend Developer (Spring Boot)",
+  //   issuer: "JetBrains Academy",
+  //   link: "https://hyperskill.org/certificates/1770e41d-3a54-46b9-bb70-63f8b524e899.pdf",
+  //   image: "/images/certifications/java_backend.pdf",
+  // },
+  // {
+  //   title: "Java Developer",
+  //   issuer: "JetBrains Academy",
+  //   link: "https://hyperskill.org/certificates/23c171e6-fcec-437b-b98f-fccd832fd0ae.pdf",
+  //   image: "/images/certifications/java.pdf",
+  // },
+  // {
+  //   title: "Java Fullstack Developer",
+  //   issuer: "JetBrains Academy",
+  //   link: "https://hyperskill.org/certificates/31f77ae8-22de-4af6-8546-fda805b4fc58.pdf",
+  //   image: "/images/certifications/java_fullstack.pdf",
+  // },
   {
     title: "Master Spring Boot 3 & Spring Framework 6 with Java",
     issuer: "Udemy",
