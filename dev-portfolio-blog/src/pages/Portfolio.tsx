@@ -13,7 +13,7 @@ const projects: Project[] = [
   {
     title: "Karate Management System",
     description:
-      "A web application for managing karate trainees, payments, and automated email reminders. Built with Spring Boot, PostgreSQL, and PayPal API. Features include user authentication, payment processing, and an admin panel.",
+      "A web application for managing karate trainees, payments, and automated email reminders. Built with Spring Boot, PostgreSQL, and PayPal API. Features include user authentication and payment processing.",
     tech: [
       "Java 17",
       "Spring Boot",
@@ -90,7 +90,7 @@ const projects: Project[] = [
   {
     title: "Akigator App",
     description:
-      "An intelligent guessing game inspired by Akinator, where the computer asks questions to guess what you're thinking. Built using Spring Boot for the backend and React with Tailwind CSS for the frontend, it leverages machine learning principles.",
+      "An intelligent guessing game inspired by Akinator. Built using Spring Boot for the backend and React with Tailwind CSS for the frontend, it leverages machine learning principles.",
     tech: [
       "Java 17",
       "Spring Boot",
