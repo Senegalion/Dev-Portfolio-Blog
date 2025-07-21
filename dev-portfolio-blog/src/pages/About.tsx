@@ -55,6 +55,32 @@ const galleryImages = [
   "/images/image6.jpg",
 ];
 
+const experienceData = [
+  {
+    title: "Junior Fullstack Java Developer",
+    company: "Firmao",
+    date: "May 2025 – June 2025",
+    description: [
+      "Implement and modify backend and frontend features in a CRM system using Java and JavaScript.",
+      "Debug existing code and deliver task-based solutions based on internal ticket descriptions.",
+      "Use Mercurial (TortoiseHg) for version control and submit regular code commits for review.",
+      "Collaborate asynchronously with the team through internal tools and apply feedback from code reviews.",
+      "Reference letter from CIO available.",
+    ],
+  },
+  {
+    title: "Programming Instructor",
+    company: "Giganci Programowania",
+    date: "February 2024 – June 2025",
+    description: [
+      "Taught coding basics and programming concepts to students using Python, C++, and C#.",
+      "Independently learned Java and provided support for Java-related questions.",
+      "Adapted lessons to different skill levels, supporting both beginners and advanced learners.",
+      "Developed communication and mentoring skills by leading individual and group coding sessions.",
+    ],
+  },
+];
+
 function About() {
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -98,6 +124,39 @@ function About() {
           </p>
         </motion.div>
       </section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mt-24 max-w-6xl mx-auto text-center"
+      >
+        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+          My Experience
+        </h3>
+        <div className="space-y-10 px-4">
+          {experienceData.map((exp, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-left"
+            >
+              <h4 className="text-xl font-semibold text-indigo-600">
+                {exp.title}
+              </h4>
+              <p className="text-gray-800 dark:text-gray-300">{exp.company}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                {exp.date}
+              </p>
+              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
+                {exp.description.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
 
       <motion.section
         initial={{ opacity: 0 }}
@@ -208,8 +267,10 @@ function About() {
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
           Places I've Visited
         </h3>
-        <div className="w-full max-w-full overflow-hidden">
-          <WorldMap color="indigo" size="responsive" data={travelData} />
+        <div className="flex justify-center w-full">
+          <div className="w-full max-w-4xl">
+            <WorldMap color="indigo" size="responsive" data={travelData} />
+          </div>
         </div>
       </motion.section>
 
